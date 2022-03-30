@@ -1,0 +1,27 @@
+use('cpf_cnpj_db')
+db.data.find()
+
+use('cpf_cnpj_db')
+db.data.find().count()
+
+use('cpf_cnpj_db')
+db.data.find().sort( { type: -1 })
+
+use('cpf_cnpj_db')
+db.data.find().sort( { blockList: -1 })
+
+use('cpf_cnpj_db')
+db.data.find().sort( { docNumber: 1 })
+
+use('cpf_cnpj_db')
+db.data.find({ type: 'cpf'})
+
+use('cpf_cnpj_db')
+db.data.updateOne(
+  { docNumber: '15974249003'},
+  [
+    { $set: { blockList: {$not: "$blockList"} }}
+
+  ]
+)
+db.data.find()
