@@ -25,3 +25,8 @@ db.data.updateOne(
   ]
 )
 db.data.find()
+
+
+use('cpf_cnpj_db')
+// true false true
+db.data.find({ type: 'cpf', blockList: true})

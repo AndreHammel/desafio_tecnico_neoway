@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/server.js"
+    "start": "nodemon src/server.js",
+    "test:integration": "mocha ./src/tests/integration/*$NAME*.test.js --exit",
+    "test:units": "mocha ./src/tests/units/*$NAME*.test.js --exit",
+    "tests": "mocha ./src/tests/**/*$NAME*.test.js --exit",
+    "test:coverage": "nyc npm run tests report --reporter=html"
   },
   "parser": "babel-eslint",
   "extends": [
@@ -22,6 +26,8 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard": "^16.0.3",
@@ -29,7 +35,13 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-promise": "^5.2.0",
+    "frisby": "^2.1.3",
+    "jest": "^27.5.1",
+    "mocha": "^9.2.2",
+    "mongodb-memory-server": "^6.9.6",
     "nodemon": "^2.0.15",
-    "prettier": "^2.6.1"
+    "nyc": "^15.1.0",
+    "prettier": "^2.6.1",
+    "sinon": "^13.0.1"
   }
 }

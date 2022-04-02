@@ -1,44 +1,37 @@
 const connection = require('./connection')
 
-const order = {
-  type: -1,
-  blockList: -1,
-  docNumber: 1
-}
-
 module.exports = {
   register: async (data) => {
     return (await connection())
       .collection(process.env.COLLECTION)
       .insertOne(data)
   },
-  searchByNumber: async (docNumber) => {
+
+  searchByNumber: async (docNumberToFind) => {
     return (await connection())
       .collection(process.env.COLLECTION)
-      .findOne({ docNumber })
+      .findOne(docNumberToFind)
   },
-  searchGetAll: async (sort) => {
+
+  searchGetAll: async (keyAndValuesTofilter) => {
     return (await connection())
       .collection(process.env.COLLECTION)
-      .find().sort({ [ sort ]: order[ sort ] }).toArray()
+      .find(keyAndValuesTofilter).toArray()
   },
-  searchByType: async (type, sort) => {
-    return (await connection())
-      .collection(process.env.COLLECTION)
-      .find({ type }).sort({ [ sort ]: order[ sort ] }).toArray()
-  },
-  changeBlockListStatus: async (docNumber) => {
-    return (await connection())
+
+  changeBlockListStatus: async (docNumber, boolean) => {
+    const result = await (await connection())
       .collection(process.env.COLLECTION)
       .updateOne(
         { docNumber },
-        [
-          { $set: { blockList: { $not: "$blockList" } } }
-        ])
+        { $set: { blockList: !boolean } }
+      )
+    return result
   },
+
   remove: async (docNumber) => {
     return (await connection())
       .collection(process.env.COLLECTION)
       .deleteOne({ docNumber })
-  },
+  }
 }

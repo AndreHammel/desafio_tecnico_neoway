@@ -1,6 +1,6 @@
 
 use('cpf_cnpj_db');
-
+db.data.deleteMany({})
 db.data.insertMany([
   { 'docNumber': "15974249003", 'blockList': false, 'type': 'cpf' },
   { 'docNumber': "79910695000107", 'blockList': true, 'type': 'cnpj' },
@@ -9,7 +9,9 @@ db.data.insertMany([
   { 'docNumber': "91528981000108", 'blockList': false, 'type': 'cnpj' },
   { 'docNumber': "98693639030", 'blockList': true, 'type': 'cpf' },
   { 'docNumber': "27822080000117", 'blockList': false, 'type': 'cnpj' },
-  { 'docNumber': "98902441000183", 'blockList': false, 'type': 'cnpj' },
+  { 'docNumber': "98902441000183", 'blockList': true, 'type': 'cnpj' },
   { 'docNumber': "98693639030", 'blockList': true, 'type': 'cpf' },
 ]);
 
+use('cpf_cnpj_db');
+db.data.find().count()

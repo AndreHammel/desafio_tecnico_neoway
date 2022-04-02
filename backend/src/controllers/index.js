@@ -1,13 +1,20 @@
 const service = require('./../services')
-
+const httpCode = require('http-status-codes').StatusCodes
 const ping = (req, res) => {
-  res.send('pongolitozinho')
+  res.status(202).json({ message: 'pong' })
 }
 
 const register = async (req, res, next) => {
   try {
-    const result = await service.register(req.body)
-    return res.status(200).json(result)
+    const docNumberAlreadyExists = await service.search(req.body)
+    if (docNumberAlreadyExists.length !== 0) {
+      return res
+        .status(httpCode.BAD_REQUEST)
+        .json({ message: 'Número de CPF/CNPJ já cadastrado' })
+    }
+    await service.register(req.body)
+    return res.status(httpCode.CREATED)
+      .json({ message: 'Cadastro criado com sucesso' })
   } catch (error) {
     next(error)
   }
@@ -16,7 +23,7 @@ const register = async (req, res, next) => {
 const search = async (req, res, next) => {
   try {
     const result = await service.search(req.body)
-    return res.status(200).json(result)
+    return res.status(httpCode.OK).json(result)
   } catch (error) {
     next(error)
   }
@@ -24,8 +31,12 @@ const search = async (req, res, next) => {
 
 const changeBlockListStatus = async (req, res, next) => {
   try {
-    const result = await service.changeBlockListStatus(req.body)
-    return res.status(200).json(result)
+    const { modifiedCount } = await service.changeBlockListStatus(req.body)
+    if (modifiedCount === 1) {
+      return res.status(httpCode.ACCEPTED)
+        .json({ message: 'Status do BlockList do documento alterado' })
+    }
+    return res.status(httpCode.BAD_REQUEST).json({ message: 'Documento não encontrado' })
   } catch (error) {
     next(error)
   }
@@ -33,8 +44,11 @@ const changeBlockListStatus = async (req, res, next) => {
 
 const remove = async (req, res, next) => {
   try {
-    const result = await service.remove(req.body)
-    return res.status(200).json(result)
+    const { deletedCount } = await service.remove(req.body)
+    if (deletedCount === 1) {
+      return res.status(httpCode.OK).json({ message: 'cpf/cnpj removido' })
+    }
+    return res.status(httpCode.OK).json({ message: 'Número de documento não encontrado' })
   } catch (error) {
     next(error)
   }
@@ -47,8 +61,9 @@ const logServer = async (req, res, next) => {
       message: 'Ok',
       date: new Date()
     }
-    const stats = Object.fromEntries(res.locals.stats)
-    return res.status(200).json({ stats, data })
+    const stats = [ ...res.locals.stats ]
+      .map(item => ({ url: item[ 0 ], count: item[ 1 ] }))
+    return res.status(httpCode.OK).json({ stats, data })
   } catch (error) {
     next(error)
   }
@@ -60,5 +75,5 @@ module.exports = {
   search,
   changeBlockListStatus,
   remove,
-  logServer,
+  logServer
 }

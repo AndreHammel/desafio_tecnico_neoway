@@ -11,12 +11,13 @@ const kvArray = [
   [ '/cpf-cnpj-manager/remove', 0 ],
   [ '/cpf-cnpj-manager/change-status', 0 ],
   [ '/cpf-cnpj-manager/search', 0 ],
-  [ '/cpf-cnpj-manager/register', 0 ],
+  [ '/cpf-cnpj-manager/register', 0 ]
 ]
+
 const stats = new Map(kvArray)
 
 module.exports = (req, res, next) => {
-  res.on("finish", () => {
+  res.on('finish', () => {
     const routeRequested = getRoute(req)
     stats.set(routeRequested, stats.get(routeRequested) + 1)
   })
