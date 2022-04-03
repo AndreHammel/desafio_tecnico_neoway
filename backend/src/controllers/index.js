@@ -1,5 +1,6 @@
 const service = require('./../services')
 const httpCode = require('http-status-codes').StatusCodes
+
 const ping = (req, res) => {
   res.status(202).json({ message: 'pong' })
 }
