@@ -64,63 +64,75 @@ Tabela de conteúdos
 ![new-print](https://user-images.githubusercontent.com/54488551/161455121-debc0a72-d4b6-44c8-b1c2-b6dcf2b70dc6.png)
 
 ## Como utilizar
+![neoway](https://user-images.githubusercontent.com/54488551/161566806-e2dec36f-fac0-4dc3-afde-59f713b6010d.gif)
 
 ## Download
-
 ```sh
 git clone git@github.com:AndreHammel/desafio_tecnico_neoway.git
 ```
-
 ```sh
 cd desafio_tecnico_neoway
 ```
 
 ### Iniciar o projeto
-
+- O script instalará as dependências do front-end e do back-end
 ```sh
 npm run dev:prestart
 ```
 
 ### Iniciar o servidor
-- fazer após 'Iniciar o projeto'
-
+- Servidor configurador para executar na PORT 3333
+- O MongoDB deve estar com status ativo
+- Pode executar o servidor em back-end no modo background
 ```sh
-$ npm start
+cd /backend/npm run dev &
+```
+
+- Pode executar direto na pasta
+```sh
+cd /backend
+```
+```sh
+npm run dev
 ```
 
 ### Iniciar o cliente
-- fazer após 'Iniciar o servidor'
+- Pode executar o servidor em front-end
 
 ```sh
-$ npm start
+cd /frontend/npm start &
 ```
 
+- Pode executar direto na pasta
+```sh
+cd /frontend
+```
+```sh
+npm start 
+```
 ## Utilizando os teste
 
 ### Back-end
+- Servidor deve em execução
 
-```sh
-cd backend
-```
-
-## Teste unitário
+#### Teste unitário
 
 ```sh
 npm run test:units
 ```
 
-## Teste integração
+#### Teste integração
 
 ```sh
 npm run test:integration
 ```
 
-## Verificar da cobertura
+#### Verificar da cobertura
 
 ```sh
 npm run test:coverage
 ```
-
+![coverage](https://user-images.githubusercontent.com/54488551/161571470-ba22ab7b-35bc-4ce7-b7c4-b5211199bde3.png)
 ### Front-end
 
 ```sh
@@ -128,15 +140,14 @@ $ cd frontend
 ```
 
 ```sh
-$ npm run test
+$ npm test
 ```
-
-#### Taxa de cobertura front-end
+#### Verificar da cobertura
 
 ```sh
-$ npm run test -- --coverage
+npm run test -- --coverage
 ```
-
+![cov](https://user-images.githubusercontent.com/54488551/161574295-c40e46bd-5b52-4c21-aa02-9c7106c8b7ed.png)
 
 ## Lista de dependencias
 
@@ -179,3 +190,12 @@ backend endpoints
 │
 └─── verifica se servidor está ativo: /cpf-cnpj-manager/ping
 ```
+
+## Melhorias & Próximos passos
+- [ ] É preciso aumetar a taxa de cobertura do front-end, ainda está muito baixa.
+- [ ] É preciso melhorar os arquivos que fazem o *mock* dos resultado do teste do back-end, está um pouco desorganizado e pode ser melhorado.
+- [ ] O retorno da informação do servidor no front-end por ser feita através de uma rota, assim não é exibido a informação através de um modal, sendo possível futuramente importar esse informação como um arquivo CSV.
+- [ ] Seria interessante incluir na informação do servidor mais informações, como por exemplo o horário que cada endpoint foi acessado, além da quantidade de acessos que atualmente mostra.
+- [ ] Para uma melhor documentação, seria importante fazer a documentação do back-end, para isso poderia ser usado a ferramenta Swagger.
+- [ ] Preciso usar o docker e componentizar os aplicações utilizados no desenvolvimento.
+ 

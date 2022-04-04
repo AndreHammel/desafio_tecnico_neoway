@@ -10,11 +10,34 @@ db.data.insertMany([
   { 'docNumber': "98693639030", 'blockList': true, 'type': 'cpf' },
   { 'docNumber': "27822080000117", 'blockList': false, 'type': 'cnpj' },
   { 'docNumber': "98902441000183", 'blockList': true, 'type': 'cnpj' },
-  { 'docNumber': "98693639030", 'blockList': true, 'type': 'cpf' },
+  { 'docNumber': "70882059000136", 'blockList': true, 'type': 'cnpj' },
+  { 'docNumber': "90169147000100", 'blockList': false, 'type': 'cnpj' },
+  { 'docNumber': "04324502000129", 'blockList': false, 'type': 'cnpj' },
+  { 'docNumber': "28300493000102", 'blockList': false, 'type': 'cnpj' },
+  { 'docNumber': "58784189000130", 'blockList': false, 'type': 'cnpj' },
+  { 'docNumber': "87908568000193", 'blockList': true, 'type': 'cnpj' },
+  { 'docNumber': "79031983000183", 'blockList': true, 'type': 'cnpj' },
+  { 'docNumber': "38928739000130", 'blockList': true, 'type': 'cnpj' },
+  { 'docNumber': "47346878000147", 'blockList': true, 'type': 'cnpj' },
+  { 'docNumber': "00615319000121", 'blockList': true, 'type': 'cnpj' },
+  { 'docNumber': "13695324000133", 'blockList': true, 'type': 'cnpj' },
+  { 'docNumber': "26669263031", 'blockList': true, 'type': 'cpf' },
+  { 'docNumber': "05451338078", 'blockList': true, 'type': 'cpf' },
+  { 'docNumber': "73491059089", 'blockList': true, 'type': 'cpf' },
+  { 'docNumber': "52525112091", 'blockList': true, 'type': 'cpf' },
+  { 'docNumber': "46898142011", 'blockList': true, 'type': 'cpf' },
+  { 'docNumber': "00428563023", 'blockList': true, 'type': 'cpf' },
+  { 'docNumber': "90951198076", 'blockList': false, 'type': 'cpf' },
+  { 'docNumber': "79953740038", 'blockList': false, 'type': 'cpf' },
+  { 'docNumber': "88456769002", 'blockList': false, 'type': 'cpf' },
+  { 'docNumber': "04510091001", 'blockList': false, 'type': 'cpf' },
+  { 'docNumber': "80878508074", 'blockList': false, 'type': 'cpf' },
+  { 'docNumber': "81994601051", 'blockList': false, 'type': 'cpf' },
+  { 'docNumber': "61981116010", 'blockList': false, 'type': 'cpf' },
 ]);
 
 use('cpf_cnpj_db');
-db.data.find().count()
+db.data.find()
 
 
 use('cpf_cnpj_db');
