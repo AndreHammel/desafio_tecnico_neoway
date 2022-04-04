@@ -71,6 +71,7 @@ export default function Register() {
                 onChange={(e) => setValueRadioButton(e.target.value)}
               >
                 <FormControlLabel 
+                  data-testid='radiobox-cpf'
                   value="cpf"
                   control={<Radio />}
                   label="CPF" 
@@ -83,12 +84,13 @@ export default function Register() {
               </RadioGroup>
               <FormControlLabel
                 control={<Checkbox />}
-                label="BlockList"
+                label="Bloqueado"
                 value={inputValue}
                 onChange={() => setValueCheckButton(!valueCheckButton)}
               />
             </div>
             <TextField
+              data-testid="register-input"
               className="register--input"
               id="outlined-textarea"
               label="CPF/CNPJ"
@@ -108,12 +110,14 @@ export default function Register() {
           </Button>
         </S.Form>
         <Snackbar
+            data-testid='snackbar'
             open={firstWarning || secondWarning || thirdWarning || fourthWarning}
             autoHideDuration={4000}
             onClose={handleClose}
             anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
           >
           <Alert
+            data-testid='alert'
             onClose={handleClose}
             severity={ fourthWarning ? "success" : "error"}
             sx={{ width: '100%' }}

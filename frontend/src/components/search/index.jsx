@@ -77,12 +77,13 @@ export default function Register() {
               </RadioGroup>
               <FormControlLabel
                 control={<Checkbox />}
-                label="BlockList"
+                label="Bloqueado"
                 value={inputValue}
                 onChange={() => setValueCheckButton(!valueCheckButton)}
               />
             </div>
             <TextField
+              data-testid='search-input'
               className="search--input"
               id="outlined-textarea"
               label="CPF/CNPJ"
@@ -109,6 +110,7 @@ export default function Register() {
           anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
         >
         <Alert
+          data-testid='alert'
           onClose={handleClose}
           severity={ "info"}
           sx={{ width: '100%' }}

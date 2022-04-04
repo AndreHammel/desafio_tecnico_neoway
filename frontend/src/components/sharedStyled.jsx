@@ -37,7 +37,7 @@ export const Form = styled.form`
 
     .register--control--checkbox,
     .search--control--checkbox {
-      width: 45%;
+      width: 50%;
       display: flex;
     }
 
