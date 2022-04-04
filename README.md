@@ -17,7 +17,8 @@ Tabela de conteúdos
       * [Taxa de cobertura back-end](#taxa-de-cobertura-back-end)
     * [Front-end](#front-end)
       * [Taxa de cobertura front-end](#taxa-de-cobertura-front-end)
-  * [Lista de dependencias](#lista-de-dependencias)
+  * [Links do deploy da aplicação](#Links-do-deploy-da-aplicação)
+  * [Lista de dependências](#lista-de-dependencias)
     * [Back-end](#back-end)
     * [Front-end](#front-end)
   * [Links & Detalhes](#links--detalhes)
@@ -43,20 +44,20 @@ Tabela de conteúdos
   A aplicação __fullstack__ tem o objetivo de fazer o gerenciamento de CPF/CNPJ, na interface deve ser possível incluir somente CPF/CNPJ válidos, a remoção do cadastro do banco de dados, além disso deve ser possível incluir o cadastro numa *blocklist*, sendo necessário também a opção de alterar a inclusão deste na *blocklist*, a ordenação e filtragem também são caracteristicas da aplicação.
 
 ## Requisitos
-1. Validação do número do CPF/CNPJ (usando algoritmo matemático[<sup>1</sup>])
-2. Front-end deve ser uma SPA
-3. Back-end deve obedecer o padrão REST
-4. Back-end deve conter um endpoint (/status) que informa o up-time do servidor
-5. O endpoint /status também deve informar quantas vezes cada endpoint do servidor foi acessado
-6. Dados devem ser armazenados no MongoDB ou PostgreSQL
-7. Deve pode filtrar os cadastras por:
-  7.1 que estão no *blocklist*
-  7.2 pelo tipo de documento (cpf ou cnpj)
-8. Deve poder retornar todos os cadastros
-9. Não deve permitir que sejá cadastrado um documento que já existe no bando de dados
-10. Quando feita a tentativa de cadastro de número existe deve informar o usuário
-11. Não deve permitir o cadastro de número com caracteres como ponto, hífen, barra e nem espaço
-12. Quando usuário tentar fazer cadastro número com caracteres deve ser informado
+- 1. Validação do número do CPF/CNPJ (usando algoritmo matemático[<sup>1</sup>])
+- 2. Front-end deve ser uma SPA
+- 3. Back-end deve obedecer o padrão REST
+- 4. Back-end deve conter um endpoint (/status) que informa o up-time do servidor
+- 5. O endpoint /status também deve informar quantas vezes cada endpoint do servidor foi acessado
+- 6. Dados devem ser armazenados no MongoDB ou PostgreSQL
+- 7. Deve pode filtrar os cadastras por:
+    - 7.1 que estão no *blocklist*
+    - 7.2 pelo tipo de documento (cpf ou cnpj)
+- 8. Deve poder retornar todos os cadastros
+- 9. Não deve permitir que sejá cadastrado um documento que já existe no bando de dados
+- 10. Quando feita a tentativa de cadastro de número existe deve informar o usuário
+- 11. Não deve permitir o cadastro de número com caracteres como ponto, hífen, barra e nem espaço
+- 12. Quando usuário tentar fazer cadastro número com caracteres deve ser informado
 
 <sup>1</sup> A validação do CPF e CNPJ foi baseada no algoritmo matemático, os links das fontes [Validação CPF](https://dicasdeprogramacao.com.br/algoritmo-para-validar-cpf/), [Validação CNPJ](https://www.macoratti.net/alg_cnpj.htm)
 
@@ -81,7 +82,7 @@ npm run dev:prestart
 ```
 
 ### Iniciar o servidor
-- Servidor configurador para executar na PORT 3333
+- Servidor configurador para executar na porta 3333
 - O MongoDB deve estar com status ativo
 - Pode executar o servidor em back-end no modo background
 ```sh
@@ -113,7 +114,7 @@ npm start
 ## Utilizando os teste
 
 ### Back-end
-- Servidor deve em execução
+- Servidor deve estar em execução
 
 #### Teste unitário
 
@@ -127,7 +128,7 @@ npm run test:units
 npm run test:integration
 ```
 
-#### Verificar da cobertura
+#### Verificar taxa de cobertura
 
 ```sh
 npm run test:coverage
@@ -136,20 +137,29 @@ npm run test:coverage
 ### Front-end
 
 ```sh
-$ cd frontend
+cd frontend
 ```
 
 ```sh
-$ npm test
+npm test
 ```
-#### Verificar da cobertura
+#### Verificar taxa de cobertura
 
 ```sh
 npm run test -- --coverage
 ```
 ![cov](https://user-images.githubusercontent.com/54488551/161574295-c40e46bd-5b52-4c21-aa02-9c7106c8b7ed.png)
 
-## Lista de dependencias
+## Links do deploy da aplicação
+
+### Back-end
+[Link deploy back-end (endpoint /ping)](https://backend-teste-tecnico-neoway.herokuapp.com/cpf-cnpj-manager/ping)
+
+### Front-end
+[Link deploy front-end](https://frontend-teste-tecnico-neoway.herokuapp.com)
+
+
+## Lista de dependências
 
 ### Back-end
 
@@ -172,9 +182,7 @@ npm run test -- --coverage
 * react-scripts: 5.0.0
 * styled-components: 5.3.3
 
-
-#### Backend endpoints
-
+Verificar da cobertura
 ```
 backend endpoints
 │
@@ -194,8 +202,8 @@ backend endpoints
 ## Melhorias & Próximos passos
 - [ ] É preciso aumetar a taxa de cobertura do front-end, ainda está muito baixa.
 - [ ] É preciso melhorar os arquivos que fazem o *mock* dos resultado do teste do back-end, está um pouco desorganizado e pode ser melhorado.
-- [ ] O retorno da informação do servidor no front-end por ser feita através de uma rota, assim não é exibido a informação através de um modal, sendo possível futuramente importar esse informação como um arquivo CSV.
+- [ ] O retorno da informação do servidor no front-end por ser feita através de uma rota, assim não é exibido a informação através de um modal, sendo possível futuramente importar essa informação como um arquivo CSV.
 - [ ] Seria interessante incluir na informação do servidor mais informações, como por exemplo o horário que cada endpoint foi acessado, além da quantidade de acessos que atualmente mostra.
 - [ ] Para uma melhor documentação, seria importante fazer a documentação do back-end, para isso poderia ser usado a ferramenta Swagger.
-- [ ] Preciso usar o docker e componentizar os aplicações utilizados no desenvolvimento.
+- [ ] Preciso usar o docker e componentizar as aplicações utilizadas no desenvolvimento.
  
