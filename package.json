@@ -1,0 +1,20 @@
+{
+  "name": "desafio_tecnico_neoway",
+  "version": "1.0.0",
+  "description": "Garra e motivação",
+  "main": "index.js",
+  "scripts": {
+    "dev:prestart": "./scripts/prestart-dev.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreHammel/desafio_tecnico_neoway.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndreHammel/desafio_tecnico_neoway/issues"
+  },
+  "homepage": "https://github.com/AndreHammel/desafio_tecnico_neoway#readme"
+}
