@@ -84,29 +84,18 @@ npm run dev:prestart
 ### Iniciar o servidor
 - Servidor configurador para executar na porta 3333
 - O MongoDB deve estar com status ativo
-- Pode executar o servidor em back-end no modo background
-```sh
-cd /backend/npm run dev &
-```
-
 - Pode executar direto na pasta
 ```sh
-cd /backend
+cd backend
 ```
 ```sh
 npm run dev
 ```
 
 ### Iniciar o cliente
-- Pode executar o servidor em front-end
-
-```sh
-cd /frontend/npm start &
-```
-
 - Pode executar direto na pasta
 ```sh
-cd /frontend
+cd frontend
 ```
 ```sh
 npm start 
