@@ -22,9 +22,8 @@ Tabela de conteúdos
     * [Back-end](#back-end)
     * [Front-end](#front-end)
   * [Links & Detalhes](#links--detalhes)
-    * [Deploy Front-end](#deploy-front-end)
-    * [Deploy Back-end](#deploy-front-end)
-    * [Backend endpoints](#backend-endpoints)
+  * [Backend endpoints](#backend-endpoints)
+  * [Melhorias & Próximos passos](#Melhorias--Próximos-passos)
 <!--te-->
 ## Tecnologias Utilizadas
 <div style="display: inline-block" align="left"><br>
