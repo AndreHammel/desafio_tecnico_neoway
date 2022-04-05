@@ -43,20 +43,20 @@ Tabela de conteúdos
   A aplicação __fullstack__ tem o objetivo de fazer o gerenciamento de CPF/CNPJ, na interface deve ser possível incluir somente CPF/CNPJ válidos, a remoção do cadastro do banco de dados, além disso deve ser possível incluir o cadastro numa *blocklist*, sendo necessário também a opção de alterar a inclusão deste na *blocklist*, a ordenação e filtragem também são caracteristicas da aplicação.
 
 ## Requisitos
-- 1. Validação do número do CPF/CNPJ (usando algoritmo matemático[<sup>1</sup>])
-- 2. Front-end deve ser uma SPA
-- 3. Back-end deve obedecer o padrão REST
-- 4. Back-end deve conter um endpoint (/status) que informa o up-time do servidor
-- 5. O endpoint /status também deve informar quantas vezes cada endpoint do servidor foi acessado
-- 6. Dados devem ser armazenados no MongoDB ou PostgreSQL
-- 7. Deve pode filtrar os cadastras por:
-    - 7.1 que estão no *blocklist*
-    - 7.2 pelo tipo de documento (cpf ou cnpj)
-- 8. Deve poder retornar todos os cadastros
-- 9. Não deve permitir que sejá cadastrado um documento que já existe no bando de dados
-- 10. Quando feita a tentativa de cadastro de número existe deve informar o usuário
-- 11. Não deve permitir o cadastro de número com caracteres como ponto, hífen, barra e nem espaço
-- 12. Quando usuário tentar fazer cadastro número com caracteres deve ser informado
+1. Validação do número do CPF/CNPJ (usando algoritmo matemático[<sup>1</sup>])
+2. Front-end deve ser uma SPA
+3. Back-end deve obedecer o padrão REST
+4. Back-end deve conter um endpoint (/status) que informa o up-time do servidor
+5. O endpoint /status também deve informar quantas vezes cada endpoint do servidor foi acessado
+6. Dados devem ser armazenados no MongoDB ou PostgreSQL
+7. Deve pode filtrar os cadastras por:
+    - que estão no *blocklist*
+    - pelo tipo de documento (cpf ou cnpj)
+8. Deve poder retornar todos os cadastros
+9. Não deve permitir que sejá cadastrado um documento que já existe no bando de dados
+10. Quando feita a tentativa de cadastro de número existe deve informar o usuário
+11. Não deve permitir o cadastro de número com caracteres como ponto, hífen, barra e nem espaço
+12. Quando usuário tentar fazer cadastro número com caracteres deve ser informado
 
 <sup>1</sup> A validação do CPF e CNPJ foi baseada no algoritmo matemático, os links das fontes [Validação CPF](https://dicasdeprogramacao.com.br/algoritmo-para-validar-cpf/), [Validação CNPJ](https://www.macoratti.net/alg_cnpj.htm)
 
