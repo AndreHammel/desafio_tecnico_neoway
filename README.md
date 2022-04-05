@@ -49,7 +49,7 @@ Tabela de conteúdos
 4. Back-end deve conter um endpoint (/status) que informa o up-time do servidor
 5. O endpoint /status também deve informar quantas vezes cada endpoint do servidor foi acessado
 6. Dados devem ser armazenados no MongoDB ou PostgreSQL
-7. Deve poder filtrar os cadastras por:
+7. Deve poder filtrar os cadastros por:
     - que estão no *blocklist*
     - pelo tipo de documento (cpf ou cnpj)
 8. Deve poder retornar todos os cadastros
